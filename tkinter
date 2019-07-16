@@ -1,0 +1,23 @@
+from tkinter import*
+from tkinter import ttk
+def table():
+    for i in range(1,13):
+        m=int(text_Input.get())
+        dis.insert(END,(i),'\t',"x","\t",(m),"\t","=","\t",(m*i))
+        dis.insert(END,"\n")
+        
+root=Tk()
+
+r=Label(text="MUTIPLY..TABLE",font=("calibri",67,"bold"),bg="yellow",fg="black").grid(row=0,column=0)
+root.config(background="red")
+root.geometry("100x100")
+root.wm_minsize(100,100)
+root.resizable(100,100)
+text_Input=StringVar()
+#b=ttk.Frame(width=209,height=296).grid(row=2,column=0)
+a=Entry(root,font=("arial",45,"bold"),bd=30,textvariable=text_Input,insertwidth=4,bg="powder blue",justify="center").grid(row=1,column=0)
+dis=Text(root,width=30,height=13,bg="violet",bd=16,font=("arial",20,"bold"))
+dis.grid(row=2,column=0)
+button=Button(text="MULTIPLICATION",font=("calibri",35,"bold"),bg="blue",fg="black",command=table).grid(row=3,column=0)
+#button.pack(side=BOTTOM,padx=20,pady=20)
+
